@@ -78,7 +78,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "https://restdev-01.onrender.com",
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/eslint-parser": "^7.21.3",
