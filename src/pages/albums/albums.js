@@ -89,7 +89,6 @@ const AlbumDynamicGridPage = () => {
       fetchGetDataWithAuth('/albums').then((res) => {
         if (res && res.data) {
           setDataArray(res.data);
-          console.log('dataArray', res.data);
         } else {
           console.error('No data found in the response:', res);
         }

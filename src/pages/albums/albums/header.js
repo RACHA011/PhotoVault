@@ -11,8 +11,7 @@ const Header = () => {
   const handleDelete = () => {
     const isConfirmed = window.confirm('Are you sure you want to delete the album');
     if (isConfirmed) {
-      fetchDeleteDataWithAuth(`/albums/${id}/delete`).then((res) => {
-        console.log(res.data);
+      fetchDeleteDataWithAuth(`/albums/${id}/delete`).then(() => {
         window.location.href = '/';
       });
     }

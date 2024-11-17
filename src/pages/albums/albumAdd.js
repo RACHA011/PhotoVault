@@ -60,9 +60,7 @@ const AddAlbum = () => {
       };
 
       fetchPostDataWithAuth('/albums/add', payload)
-        .then((response) => {
-          console.log(response);
-        })
+        .then(() => {})
         .catch((error) => {
           console.error('Login error:', error);
         });

@@ -74,8 +74,7 @@ const PhotoGrid = () => {
   const handleDelete = (photo_id) => {
     const isConfirmed = window.confirm('Are you sure you want to delete');
     if (isConfirmed) {
-      fetchDeleteDataWithAuth(`/albums/${album_id}/photos/${photo_id}/delete`).then((res) => {
-        console.log(res.data);
+      fetchDeleteDataWithAuth(`/albums/${album_id}/photos/${photo_id}/delete`).then(() => {
         window.location.reload();
       });
     }
