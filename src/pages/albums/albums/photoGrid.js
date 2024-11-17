@@ -58,15 +58,14 @@ const PhotoGrid = () => {
   const handleDownload = async (download_link) => {
     fetchGetBlockDataWithAuth(download_link).then((response) => {
       try {
-        const disposition = response.headers.get('content-disposition');
-        const match = /filename="(.*)"/.exec(disposition);
-        const filename = match ? match[1] : 'downloadedFile';
-        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const filename = `photo_${Date.now()}.jpg`;
+        const url = window.URL.createObjectURL(new Blob([response.data], { type: 'image/jpeg' })); // Ensure content type matches API
         const link = document.createElement('a');
         link.href = url;
-        link.setAttribute('download', filename);
+        link.setAttribute('download', filename); // Set the download filename
         document.body.appendChild(link);
         link.click();
+        link.remove(); // Clean up the DOM
       } catch (error) {
         console.error('Error downloading photo:', error);
       }

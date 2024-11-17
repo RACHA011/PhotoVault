@@ -54,8 +54,8 @@ const FileUploadPage = () => {
       files.forEach((file) => {
         formData.append('files', file);
       });
-      fetchPostFileUpload(`/albums/${id}/upload-photos`, formData).then((res) => {
-        console.log(res.data);
+      fetchPostFileUpload(`/albums/${id}/upload-photos`, formData).then(() => {
+        //console.log(res.data);
         navigate(`/album/Show?id=${id}`);
       });
 
