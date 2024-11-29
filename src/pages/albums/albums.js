@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Grid, Card, CardContent } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { useNavigate, Link } from 'react-router-dom';
 import { fetchGetDataWithAuth } from 'client/client';
 
@@ -63,12 +64,12 @@ const getRandomColor = () => {
   return brightPopColors[randomIndex];
 };
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   card: {
     backgroundColor: getRandomColor(),
     textAlign: 'center',
-    padding: theme.spacing(3),
-    borderRadius: theme.spacing(2),
+    padding: useTheme().spacing(3),
+    borderRadius: useTheme().spacing(2),
     height: '250px', // Increase the height
     display: 'flex',
     flexDirection: 'column',
