@@ -8,7 +8,10 @@ const config = {
   container: true,
   mode: 'light',
   presetColor: 'default',
-  themeDirection: 'ltr'
+  themeDirection: 'ltr',
+  devServer: {
+    allowedHosts: 'all' // Accept requests from any host
+  }
 };
 
 export default config;
