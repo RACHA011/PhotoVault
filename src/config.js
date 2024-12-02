@@ -9,9 +9,9 @@ const config = {
   themeDirection: 'ltr',
   devServer: {
     allowedHosts: 'all', // Accept requests from any host
-    host: '0.0.0.0',     // Listen on all network interfaces
-    port: 3000,          // Ensure the correct port is used
-    disableHostCheck: true, // Disable host checking
+    host: '0.0.0.0', // Listen on all network interfaces
+    port: 3000, // Ensure the correct port is used
+    disableHostCheck: true // Disable host checking
   }
 };
 
