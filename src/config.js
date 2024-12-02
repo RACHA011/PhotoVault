@@ -1,5 +1,3 @@
-// ==============================|| THEME CONFIG  ||============================== //
-
 const config = {
   defaultPath: '/about',
   fontFamily: `'Public Sans', sans-serif`,
@@ -10,7 +8,10 @@ const config = {
   presetColor: 'default',
   themeDirection: 'ltr',
   devServer: {
-    allowedHosts: 'all' // Accept requests from any host
+    allowedHosts: 'all', // Accept requests from any host
+    host: '0.0.0.0',     // Listen on all network interfaces
+    port: 3000,          // Ensure the correct port is used
+    disableHostCheck: true, // Disable host checking
   }
 };
 
