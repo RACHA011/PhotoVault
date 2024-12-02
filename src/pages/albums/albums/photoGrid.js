@@ -3,21 +3,22 @@ import { Buffer } from 'buffer';
 import { fetchDeleteDataWithAuth, fetchGetBlockDataWithAuth, fetchGetDataWithArrayBuffer, fetchGetDataWithAuth } from 'client/client';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 
-const userStyles = makeStyles((theme) => ({
+const userStyles = makeStyles(() => ({
   modal: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
   },
   modalMain: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: useTheme().palette.background.paper,
     borderRadius: '10px',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    boxShadow: useTheme().shadows[5],
+    padding: useTheme().spacing(2, 4, 3),
     maxHeight: '95%',
     maxWidth: '95%',
     overflow: 'auto'

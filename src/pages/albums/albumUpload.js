@@ -3,15 +3,16 @@ import Header from './albums/header';
 import { Box, Button, Container, Grid, Paper, Typography, IconButton, CircularProgress } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { AddCircleOutline, Close } from '@mui/icons-material';
+import { useTheme } from '@mui/material/styles';
 import { useDropzone } from 'react-dropzone';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { fetchPostFileUpload } from 'client/client';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   dropzoneContainer: {
-    border: `2px dashed ${theme.palette.primary.main}`,
-    borderRadius: theme.spacing(2),
-    padding: theme.spacing(4),
+    border: `2px dashed ${useTheme().palette.primary.main}`,
+    borderRadius: useTheme().spacing(2),
+    padding: useTheme().spacing(4),
     textAlign: 'center',
     cursor: 'pointer'
   },
@@ -19,10 +20,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: theme.spacing(2),
-    marginTop: theme.spacing(2),
-    border: `1px solid ${theme.palette.secondary.main}`,
-    borderRadius: theme.spacing(1)
+    padding: useTheme().spacing(2),
+    marginTop: useTheme().spacing(2),
+    border: `1px solid ${useTheme().palette.secondary.main}`,
+    borderRadius: useTheme().spacing(1)
   }
 }));
 
@@ -54,8 +55,7 @@ const FileUploadPage = () => {
       files.forEach((file) => {
         formData.append('files', file);
       });
-      fetchPostFileUpload(`/albums/${id}/upload-photos`, formData).then((res) => {
-        console.log(res.data);
+      fetchPostFileUpload(`/albums/${id}/upload-photos`, formData).then(() => {
         navigate(`/album/Show?id=${id}`);
       });
 
